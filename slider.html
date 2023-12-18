@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+
+    <style>
+        * {
+            margin: 0;
+        }
+
+        .slider {
+            position: relative;
+            width: 100%;
+        }
+
+        .slides img {
+
+            height: 600px;
+            width: 100%;
+
+        }
+
+        .arrow {
+            cursor: pointer;
+            position: absolute;
+            top: 45%;
+            background-color: rgba(255, 255, 255, 0.605);
+            color: black;
+            padding: 8px 18px;
+            border-radius: 50%;
+            font-size: 25px;
+            font-weight: bold;
+        }
+
+        .next {
+            right: 10px;
+        }
+
+        .prev {
+            left: 10px;
+        }
+
+        .text {
+            color: white;
+            font-size: 28px;
+            font-weight: bold;
+            bottom: 0px;
+            position: absolute;
+            background-color: rgba(0, 0, 0, 0.5);
+            text-align: center;
+            width: 100%;
+            padding: 13px 0px;
+        }
+
+        .slide {
+            display: none;
+        }
+    </style>
+
+
+</head>
+
+<body>
+    <div class="slider">
+        <div class="slides">
+            <div class="slide">
+                <img src="https://cdn.pixabay.com/photo/2015/04/23/22/00/tree-736885_1280.jpg" alt="">
+                <div class=" text">Image 1
+                </div>
+            </div>
+            <div class="slide">
+                <img src="https://cdn.create.vista.com/api/media/small/118632000/stock-photo-summer-landscape-with-a-beautiful-sunrise-in-the-mountains"
+                    alt="">
+                <div class="text">Image 2</div>
+            </div>
+            <div class="slide">
+                <img src="https://images.ctfassets.net/hrltx12pl8hq/28ECAQiPJZ78hxatLTa7Ts/2f695d869736ae3b0de3e56ceaca3958/free-nature-images.jpg?fit=fill&w=1200&h=630"
+                    alt="">
+                <div class=" text">Image 3
+                </div>
+            </div>
+            <div class="slide">
+                <img src="https://images.unsplash.com/reserve/bOvf94dPRxWu0u3QsPjF_tree.jpg?ixid=M3wxMjA3fDB8MXxzZWFyY2h8NHx8bmF0dXJhbHxlbnwwfHx8fDE3MDI3OTcwMjl8MA&ixlib=rb-4.0.3"
+                    alt="">
+                <div class="text">Image 4</div>
+            </div>
+            <div class="arrow prev ">
+                <span class="fa-solid fa-angle-left" onclick="controller(-1)"></span>
+            </div>
+            <div class="arrow next">
+                <span class="fa-solid fa-angle-right" onclick="controller(1)"></span>
+            </div>
+
+        </div>
+
+    </div>
+
+    <script>
+        let flag = 0;
+
+        slideshow(flag);
+
+        function controller(x) {
+            flag = flag + x;
+            slideshow(flag)
+        }
+
+        function slideshow(num) {
+            let show = document.getElementsByClassName('slide')
+
+            if (num == show.length) {
+                flag = 0;
+                num = 0;
+            }
+            if (num < 0) {
+                flag = show.length - 1
+                num = show.length - 1
+            }
+            for (let y of show) {
+                y.style.display = "none"
+            }
+
+            show[num].style.display = "block"
+        }
+    </script>
+
+</body>
+
+</html>

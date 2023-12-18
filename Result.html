@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        table {
+            border: 1px solid black;
+            padding: 10px;
+        }
+
+        input {
+            border: 1px solid black;
+            height: 20px;
+            outline: none;
+            border-radius: 3px;
+        }
+
+        p {
+            text-align: center;
+        }
+
+        button {
+            margin-left: 150px;
+            border: 1px solid black;
+            border-radius: 5px;
+            height: 25px;
+        }
+    </style>
+</head>
+
+
+<body>
+    <div class="continer">
+        <table border="0">
+            <form action="">
+                <tr>
+                    <th>Marksheet For Information Technology</th>
+                </tr>
+                <tr>
+                    <td>
+                        <p>Enter Mark</p>
+                    </td>
+                </tr>
+                <div class="mark1">
+                    <tr>
+                        <td><label for="">1.C Langauge</label></td>
+                        <td> <input type="number" name="" id="markOne"> </td>
+                    </tr>
+                </div>
+                <div class="mark2">
+                    <tr>
+                        <td><label for="">2.C++ Langauge</label></td>
+                        <td><input type="number" name="" id="markTwo"></td>
+                    </tr>
+                </div>
+                <div class="mark3">
+                    <tr>
+                        <td><label for="">3.Database</label></td>
+                        <td><input type="number" name="" id="markThree"></td>
+                    </tr>
+                </div>
+                <div class="mark4">
+                    <tr>
+                        <td><label for="">4.HTML</label></td>
+                        <td><input type="number" name="" id="markFour"></td>
+                    </tr>
+                </div>
+                <div class="mark5">
+                    <tr>
+                        <td><label for="">5.CSS</label></td>
+                        <td><input type="number" name="" id="markFive"></td>
+                    </tr>
+                </div>
+                <div class="mark6">
+                    <tr>
+                        <td><label for="">6.php</label></td>
+                        <td><input type="number" name="" id="markSix"></td>
+                    </tr>
+                </div>
+                <div class="mark7">
+                    <tr>
+                        <td><label for="">7.Core java</label></td>
+                        <td><input type="number" name="" id="markSeven"></td>
+                    </tr>
+                </div>
+            </form>
+            <div>
+                <tr>
+                    <td> <button onclick="return result()" id="btn">Result</button></td>
+                </tr>
+            </div>
+            <div>
+                <tr>
+                    <td>Total is :</td>
+                    <td id="obtain"></td>
+                    <td>/350</td>
+
+                </tr>
+
+            </div>
+            <div>
+                <tr>
+                    <td>Percentag: </td>
+                    <td id="per"></td>
+                    <td>%</td>
+                </tr>
+
+            </div>
+        </table>
+    </div>
+
+    <script>
+        function result() {
+            var a = parseInt(document.getElementById('markOne').value);
+            var b = parseInt(document.getElementById('markTwo').value);
+            var c = parseInt(document.getElementById('markThree').value);
+            var d = parseInt(document.getElementById('markFour').value);
+            var e = parseInt(document.getElementById('markFive').value);
+            var f = parseInt(document.getElementById('markSix').value);
+            var g = parseInt(document.getElementById('markSeven').value);
+            if (a > 50 || b > 50 || c > 50 || d > 50 || e > 50 || f > 50 || g > 50) {
+                alert("please enter correct value")
+            }
+            else {
+                var obtain = a + b + c + d + e + f + g;
+                document.getElementById("obtain").innerHTML = obtain;
+                var per = obtain / 350 * 50;
+                document.getElementById("per").innerHTML = per;
+                return false
+            }
+
+        }
+    </script>
+</body>
+
+</html>

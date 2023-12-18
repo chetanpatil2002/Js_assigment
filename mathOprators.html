@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .math {
+            height: 250px;
+            width: 300px;
+            border: 1px solid black;
+            padding: 20px;
+        }
+
+        .math h4 {
+            text-align: center;
+        }
+
+        .math input {
+            height: 20px;
+            border: 1px solid black;
+            outline: none;
+            padding-left: 5px;
+            border-radius: 5px;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="math">
+
+        <div>
+            <h4>Math Operation</h4>
+        </div>
+
+        <form name="math_Op">
+
+
+
+            Enter 1st Number : <input type="text" name="first">
+
+            <br><br>
+
+
+            Enter 2nd Number: <input type="text" name="second">
+
+            <br><br>
+
+            <button onclick="javascript:return addition();"> + </button>
+            <button onclick="javascript:return subtraction();"> - </button>
+            <button onclick="javascript:return multiply();"> * </button>
+            <button onclick="javascript:return division() ;"> / </button>
+            <button onclick="javascript:return modulus() ;"> % </button>
+
+
+            <br><br>
+
+
+            Answer is: <input type="text" name="total">
+        </form>
+    </div>
+
+
+    <script>
+
+        function multiply() {
+            a = Number(document.math_Op.first.value);
+            b = Number(document.math_Op.second.value);
+            c = a * b;
+            document.math_Op.total.value = c;
+            return false
+        }
+
+        function addition() {
+            a = Number(document.math_Op.first.value);
+            b = Number(document.math_Op.second.value);
+            c = a + b;
+            document.math_Op.total.value = c;
+            return false
+        }
+
+
+        function subtraction() {
+            a = Number(document.math_Op.first.value);
+            b = Number(document.math_Op.second.value);
+            c = a - b;
+            document.math_Op.total.value = c;
+            return false
+
+        }
+
+
+        function division() {
+            a = Number(document.math_Op.first.value);
+            b = Number(document.math_Op.second.value);
+            c = a / b;
+            document.math_Op.total.value = c;
+            return false
+        }
+
+        function modulus() {
+            a = Number(document.math_Op.first.value);
+            b = Number(document.math_Op.second.value);
+            c = a % b;
+            document.math_Op.total.value = c;
+            return false
+        }
+    </script>
+
+</body>
+
+</html>
